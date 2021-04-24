@@ -22,6 +22,7 @@ class CreateUser extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('token')->nullable();
+            $table->string('dni');
             $table->string('adress');
             $table->string('city');
             $table->string('postalCode');

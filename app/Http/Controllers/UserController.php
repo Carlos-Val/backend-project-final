@@ -20,6 +20,7 @@ class UserController extends Controller
         $surname2 = $request->input('surname2');
         $email = $request->input('email');
         $password = $request->input('password');
+        $dni = $request->input('dni');
         $adress = $request->input('adress');
         $city = $request->input('city');
         $postalCode = $request->input('postalCode');
@@ -37,6 +38,7 @@ class UserController extends Controller
                 'surname2' =>$surname2,
                 'email' =>$email,
                 'password' =>$password,
+                'dni' =>$dni,
                 'adress' =>$adress,
                 'city' =>$city,
                 'postalCode' =>$postalCode
@@ -136,7 +138,7 @@ class UserController extends Controller
             ]);
         }
         try {
-            $userData = request(['name', 'surname1', 'surname2', 'city', 'adress', 'postalCode', 'city']);
+            $userData = request(['name', 'surname1', 'surname2', 'city', 'dni', 'adress', 'postalCode', 'city']);
             return User::find($id)->update($userData);
         } catch(QueryException $error) {
              return $error;
