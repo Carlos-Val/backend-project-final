@@ -21,7 +21,8 @@ class CreateUser extends Migration
             $table->string('surname2');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('');
+            $table->string('token')->nullable();
+            $table->string('city');
             $table->string('adress');
             $table->string('postalCode');
             $table->string('city');            
