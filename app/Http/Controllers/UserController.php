@@ -10,6 +10,50 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
 
+    //Registro un nuevo User
+
+    public function registerUser(Request $request){
+
+        $nickName = $request->input('nickName');
+        $name = $request->input('name');
+        $surname1 = $request->input('surname1');
+        $surname2 = $request->input('surname2');
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $adress = $request->input('adress');
+        $city = $request->input('city');
+        $postalCode = $request->input('postalCode');
+
+        //Hasea password
+
+        $password = Hash::make($password);
+
+        try{
+
+            return User::create([
+                'nickName' =>$nickName,
+                'name' =>$name,
+                'surname1' =>$surname1,
+                'surname2' =>$surname2,
+                'email' =>$email,
+                'password' =>$password,
+                'adress' =>$adress,
+                'city' =>$city,
+                'postalCode' =>$postalCode
+            ]);
+        }catch (QueryException $error){
+
+            $eCode = $error->errorInfo[1];
+
+            if($eCode == 1062){
+                return response()->json([
+                    'error' => "Usuario registrado anteriormente"
+                ]);
+            }
+        }
+    }
+
+
     //Login
 
     public function loginUser(Request $request){
@@ -78,6 +122,24 @@ class UserController extends Controller
 
         }catch(QueryException $error){
             return $error;
+        }
+    }
+
+    //Modificar los datos del User
+
+    public function updateUser(Request $request, $id)
+    {
+        $user = $request->user();
+        if ($user['id'] != $id) {
+            return response()->json([
+                'error' => "Sólo puedes modificar tus propios datos."
+            ]);
+        }
+        try {
+            $userData = request(['name', 'surname1', 'surname2', 'city', 'adress', 'postalCode', 'city']);
+            return User::find($id)->update($userData);
+        } catch(QueryException $error) {
+             return $error;
         }
     }
 
