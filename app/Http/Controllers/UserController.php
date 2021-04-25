@@ -131,15 +131,27 @@ class UserController extends Controller
 
     public function updateUser(Request $request, $id)
     {
-        $user = $request->user();
-        if ($user['id'] != $id) {
-            return response()->json([
-                'error' => "Sólo puedes modificar tus propios datos."
-            ]);
-        }
+        
+        $name = $request->input('name');
+        $surname1 = $request->input('surname1');
+        $surname2 = $request->input('surname2');
+        $dni = $request->input('dni');
+        $adress = $request->input('adress');
+        $city = $request->input('city');
+        $postalCode = $request->input('postalCode');
+
+
         try {
-            $userData = request(['name', 'surname1', 'surname2', 'city', 'dni', 'adress', 'postalCode', 'city']);
-            return User::find($id)->update($userData);
+            return User::where('id', '=', $id)->update([
+                'name'=>$name,
+                'surname1'=>$surname1,
+                'surname2'=>$surname2,
+                'dni'=>$dni,
+                'adress'=>$adress,
+                'city'=>$city,
+                'postalCode'=>$postalCode
+                ]);
+            
         } catch(QueryException $error) {
              return $error;
         }

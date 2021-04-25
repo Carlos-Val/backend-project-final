@@ -11,6 +11,6 @@ use Illuminate\Support\Facades\Route;
 Route::post('/user', [UserController::class, 'registerUser']);
 Route::post('/user/login', [UserController::class, 'loginUser']);
 Route::post('/user/logout', [UserController::class, 'logOutUser']);
-Route::put('/user', [UserController::class, 'updateUser']);
+Route::put('/user/{id}', [UserController::class, 'updateUser']);
 
 
