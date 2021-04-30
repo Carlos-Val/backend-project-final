@@ -9,7 +9,23 @@ class User extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nickName', 'name','surname1', 'surname2', 'email', 'password', 'token', 'dni', 'adress', 'city', 'postalCode'];
+    protected $fillable = [
+        'nickName', 
+        'name',
+        'surname1', 
+        'surname2', 
+        'email', 
+        'password', 
+        'token', 
+        'dni', 
+        'adress', 
+        'city', 
+        'postalCode'
+    ];
 
+    public function userOrder() {
+
+        return $this -> hasMany('App\Models\Order', 'iduser');
+    }
     
 }
