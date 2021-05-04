@@ -18,7 +18,7 @@ class User extends Model
         'password', 
         'token', 
         'dni', 
-        'adress', 
+        'address', 
         'city', 
         'postalCode'
     ];

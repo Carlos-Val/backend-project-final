@@ -21,7 +21,7 @@ class UserController extends Controller
         $email = $request->input('email');
         $password = $request->input('password');
         $dni = $request->input('dni');
-        $adress = $request->input('adress');
+        $address = $request->input('address');
         $city = $request->input('city');
         $postalCode = $request->input('postalCode');
 
@@ -39,7 +39,7 @@ class UserController extends Controller
                 'email' =>$email,
                 'password' =>$password,
                 'dni' =>$dni,
-                'adress' =>$adress,
+                'address' =>$address,
                 'city' =>$city,
                 'postalCode' =>$postalCode
             ]);
@@ -136,7 +136,7 @@ class UserController extends Controller
         $surname1 = $request->input('surname1');
         $surname2 = $request->input('surname2');
         $dni = $request->input('dni');
-        $adress = $request->input('adress');
+        $address = $request->input('address');
         $city = $request->input('city');
         $postalCode = $request->input('postalCode');
 
@@ -147,7 +147,7 @@ class UserController extends Controller
                 'surname1'=>$surname1,
                 'surname2'=>$surname2,
                 'dni'=>$dni,
-                'adress'=>$adress,
+                'address'=>$address,
                 'city'=>$city,
                 'postalCode'=>$postalCode
                 ]);

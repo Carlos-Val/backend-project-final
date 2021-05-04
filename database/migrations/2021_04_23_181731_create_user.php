@@ -23,7 +23,7 @@ class CreateUser extends Migration
             $table->string('password');
             $table->string('token')->nullable();
             $table->string('dni');
-            $table->string('adress');
+            $table->string('address');
             $table->string('city');
             $table->string('postalCode');
             $table->timestamps();
