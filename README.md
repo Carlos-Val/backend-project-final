@@ -57,7 +57,7 @@ php artisan migrate
 ## 🚀 In the near and not too distant future... <a name = "future_scope"></a>
 
 
-I have left the code open to, in the future, be able to continue making relationships with users and orders, in addition to being able to generate new tables to be able to make this project bigger
+I have left the code open to, in the future, be able to continue making relationships with users and orders, in addition to being able to generate new tables to be able to make this project bigger.
 
 
 ## ⛏️ Built Using <a name = "built_using"></a>
