@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="src/assets/img/logo.png" alt="Logo comic"></a>
+ <img width=200px height=200px src="https://user-images.githubusercontent.com/75422798/117887152-92b11880-b2b0-11eb-8c83-87770af0e10a.png" alt="Logo comic"></a>
 </p>
 
 <h3 align="center">Carlangas Comic</h3>
@@ -28,57 +28,45 @@
 
 ## 🧐 About <a name = "about"></a>
 
-I have created an ecommerce in reference to the sale of comics from an external API that supplied me with the data to be able to handle it and create an application according to my knowledge.
+This part is the backend of my final FullStack Developer project at GeeksHubs.
 
-This is the frontend part of the project, which can be searched of various types, from the comics that will be presented in the future to those that have been published in the last month, by characters or by title, in addition to have a profile view where you can see the purchases made or modify your profile.Going through who has written or drawn a particular comic and being able to add all the comics you want to the shopping cart for when you want to be able to buy it.
+I have left the backend open to new possibilities that can be added in the future and, in which, I have created a relationship between orders and users, which can list all the comics they have bought.
+In addition to having a robust error control when registering or logging in, all of this worked from Laravel.
+
+#### Relations
+
+![relaciones](https://user-images.githubusercontent.com/75422798/117885841-a22f6200-b2ae-11eb-81f0-0162077e78dc.jpg)
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-####Prerequisites
-
-In order to install the project, NodeJS must be installed, using the version 15.5.1 in this case. We start the project and all its dependencies using the command:
+To start working with the repository you have to put three commands:
 
 ```
-npm install
+sh docker-run.sh
 ```
-#### Installing
+Then, once we have run docker, the following command is:
 
-Once the dependencies are installed, the project starts by running the command:
+```
+php artisan serve
+```
+Finally, you create a database to be able to enter the migrations with the following command:
 
-````
-npm start
-````
-
-
-
-## 🎈 Usage <a name="usage"></a>
-
-The use of this application is quite simple.
-
-The first thing to do is a registration, if you don't have it. Once you have registered with your personal data, you have to log in.
-
-Once logged in, you are on the main screen of the application and you can move in many directions, from a navbar that takes you to your profile to logout through a help view or even go directly to buy the comics you already have in the shopping cart. From the same main view you can do a search that takes you to the result and you can even see the latest news from the carousel and can select the product that interests you.
+```
+php artisan migrate
+```
 
 ## 🚀 In the near and not too distant future... <a name = "future_scope"></a>
 
-TMy intention is to create a few more functionalities to the application, from being able to read the comics that you have bought to creating a chat or forum where you can speak openly about the latest comics, going through creating a section of comics that interest the user.
+
+I have left the code open to, in the future, be able to continue making relationships with users and orders, in addition to being able to generate new tables to be able to make this project bigger
 
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [MySql](https://www.mysql.com/) - Databse
+- [Laravel](https://laravel.com/) - ORM
+- [PHP](https://www.php.net/) - Hypertext Preprocessor
+- [Postman](https://learning.postman.com/docs/getting-started/introduction/) - Server Environment
 - [Docker](https://docs.docker.com/) - Server Deployment
-- [Sass](https://sass-lang.com/) - Library
-- [Bootstrap](https://www.npmjs.com/package/bootstrap) - Library
-- [Reactstrap](https://reactstrap.github.io/) - Library
-- [GitFlow](https://www.atlassian.com/es/git/tutorials/comparing-workflows/gitflow-workflow) - Work flow
-- [ReactJS](https://es.reactjs.org/) - JavaScript library 
-- [Redux](https://es.redux.js.org/) - JavaScript library 
-- [Express](https://expressjs.com/) - Server Framework
-- [JavaScript](https://www.javascript.com/) - Web Framework
-- [Axios](https://www.axios.com/) - Server Evironment
 
 ## ✍️ Authors <a name = "authors"></a>
 
