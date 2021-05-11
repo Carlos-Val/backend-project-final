@@ -21,10 +21,11 @@ class CreateUser extends Migration
             $table->string('surname2');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('');
-            $table->string('adress');
+            $table->string('token')->nullable();
+            $table->string('dni');
+            $table->string('address');
+            $table->string('city');
             $table->string('postalCode');
-            $table->string('city');            
             $table->timestamps();
         });
     }
@@ -36,6 +37,6 @@ class CreateUser extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user');
+        Schema::dropIfExists('users');
     }
 }
